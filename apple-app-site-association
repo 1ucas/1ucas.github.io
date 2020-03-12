@@ -4,7 +4,7 @@
     "details": [
       {
         "appID":"4FBS7S5FAN.com.localiza.mobile",
-        "paths":["*"]				
+        "paths":["/*"]				
       }
     ]
   }
