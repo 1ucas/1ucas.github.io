@@ -4,11 +4,11 @@
     "details": [
       {
         "appID": "27E9959VWR.com.localiza.mobile",
-        "paths": [ "*" ]
+        "paths": [ "*", "/" ]
       },
       {
         "appID": "4FBS7S5FAN.com.localiza.mobile",
-        "paths": [ "*" ]
+        "paths": [ "*", "/" ]
       }
     ]
   }
