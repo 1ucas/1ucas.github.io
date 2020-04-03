@@ -3,10 +3,6 @@
     "apps": [],
     "details": [
       {
-        "appID": "9UJT78M7FK.com.localiza.mobile",
-        "paths": [ "*", "/" ]
-      },
-      {
         "appID": "27E9959VWR.com.localiza.mobile",
         "paths": [ "*", "/" ]
       }
