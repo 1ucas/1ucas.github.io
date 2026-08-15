@@ -52,11 +52,30 @@
     .lost .btn {
       margin-top: 2rem;
     }
+
+    .lost-art {
+      position: absolute;
+      inset: 0;
+      background: url("/assets/art/lost.webp") center / cover no-repeat;
+      opacity: .22;
+      -webkit-mask-image: radial-gradient(60% 60% at 50% 55%, transparent 15%, #000 85%);
+      mask-image: radial-gradient(60% 60% at 50% 55%, transparent 15%, #000 85%);
+      pointer-events: none;
+    }
+
+    :root[data-theme="light"] .lost-art {
+      opacity: .16;
+    }
+
+    .lost .wrap {
+      position: relative;
+    }
   </style>
 </head>
 
 <body>
   <main class="lost">
+    <div class="lost-art" aria-hidden="true"></div>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap">
       <p class="lost-code">404</p>

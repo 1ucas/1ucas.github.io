@@ -1085,3 +1085,51 @@ img {
     opacity: .3;
   }
 }
+
+/* ---------- generated artwork ---------- */
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-art) center 32% / cover no-repeat;
+  opacity: .2;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  pointer-events: none;
+}
+
+:root {
+  --hero-art: url("art/hero.webp");
+}
+
+:root[data-theme="light"] .hero-art {
+  opacity: .13;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card-art {
+  position: relative;
+  height: 86px;
+  margin: -1.5rem -1.45rem 0;
+  background: var(--art) center / cover no-repeat;
+}
+
+.card-lead .card-art {
+  height: 108px;
+}
+
+.card-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      color-mix(in srgb, var(--surface) 30%, transparent) 0%,
+      var(--surface) 96%);
+}
+
+:root[data-theme="light"] .card-art {
+  opacity: .9;
+}
