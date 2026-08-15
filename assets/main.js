@@ -66,11 +66,15 @@
     });
 
     root.lang = lang === "pt" ? "pt-BR" : "en";
-    if (langLabel) langLabel.textContent = lang === "pt" ? "EN" : "PT";
+
+    /* The label names the language you are reading, not the one you would
+       switch to. The aria-label repeats it and adds the action, so the
+       accessible name contains the visible text. */
+    if (langLabel) langLabel.textContent = lang === "pt" ? "PT" : "EN";
     if (langToggle) {
       langToggle.setAttribute(
         "aria-label",
-        lang === "pt" ? "Switch language to English" : "Switch language to Portuguese"
+        lang === "pt" ? "Português — mudar para inglês" : "English — switch to Portuguese"
       );
     }
   }
