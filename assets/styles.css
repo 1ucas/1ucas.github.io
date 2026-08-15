@@ -1141,3 +1141,9 @@ img {
 :root[data-theme="light"] .card-art {
   opacity: .9;
 }
+
+/* emphasis inside card copy, e.g. a maintainer role */
+.card p strong {
+  color: var(--text);
+  font-weight: 650;
+}
