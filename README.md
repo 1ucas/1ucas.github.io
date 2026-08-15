@@ -18,22 +18,13 @@ assets/
   og.png                      social share card (1200×630)
   favicon.svg
 robots.txt, sitemap.xml
-.nojekyll                     serve files as-is, including dot-directories
-apple-app-site-association    ⚠️ deep-link config — see below
-.well-known/
-  apple-app-site-association  ⚠️ same, at the standard path
+.nojekyll                     serve the files as-is, no Jekyll build
 ```
 
-## Two things worth knowing before editing
-
-**The `apple-app-site-association` files are not part of the site.** They are
-Apple universal-link configuration served from this domain, and they are live.
-Deleting, renaming, or reformatting either one breaks deep links for the apps
-that point here. Leave them alone unless that is the change you mean to make.
-
-**`.nojekyll` matters.** Without it GitHub Pages runs Jekyll, which skips
-directories beginning with a dot — which meant `/.well-known/` returned 404.
-The file keeps that path reachable and skips a build step nothing here needs.
+`.nojekyll` tells GitHub Pages to publish the directory exactly as committed
+instead of running it through Jekyll. Nothing here needs a build step, and it
+means files and directories are served under the names they have in the repo —
+including any beginning with a dot, which Jekyll would otherwise skip.
 
 ## Design notes
 
