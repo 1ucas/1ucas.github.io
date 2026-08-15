@@ -78,7 +78,10 @@ document, which silently produced `assets/assets/art/...`.
 ## The stats section
 
 The tiles are hand-counted from public repositories: 49 own repos (forks
-excluded), 32 stars, first repo in 2016.
+excluded), 32 stars, and 12 years — the earliest commit is `pirates-game`'s
+"Initial Commit", authored 2014-06-18. Note that predates the GitHub account
+itself (created May 2016); that repository carries imported history, so go by
+commit dates rather than by when the repo was created.
 
 The contribution chart reads a year of daily levels baked into
 `data-levels` / `data-counts` on `#chart-grid`, so it paints instantly, works
