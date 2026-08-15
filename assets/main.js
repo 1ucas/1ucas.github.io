@@ -85,6 +85,7 @@
       var next = root.lang === "pt-BR" ? "en" : "pt";
       applyLang(next);
       store.set("lang", next);
+      chartFromDataset();   /* month labels and tooltips follow the language */
     });
   }
 
@@ -101,6 +102,94 @@
     new IntersectionObserver(function (entries) {
       topbar.classList.toggle("is-stuck", !entries[0].isIntersecting);
     }).observe(sentinel);
+  }
+
+
+  /* ---------- contribution chart ----------
+     The last year of activity is baked into data-levels / data-counts so the
+     chart paints instantly and still works offline. Once drawn, we ask the
+     public contributions API for fresh numbers and redraw if it answers;
+     if it does not, the snapshot simply stands. */
+
+  var grid = document.getElementById("chart-grid");
+
+  var MONTHS = {
+    en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    pt: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+  };
+
+  function drawChart(startISO, levels, counts) {
+    if (!grid) return;
+
+    var months = document.getElementById("chart-months");
+    var start = new Date(startISO + "T00:00:00");
+    var lang = root.lang === "pt-BR" ? "pt" : "en";
+    var names = MONTHS[lang];
+    var gridFrag = document.createDocumentFragment();
+    var monthFrag = document.createDocumentFragment();
+    var seen = -1;
+
+    for (var i = 0; i < levels.length; i++) {
+      var day = new Date(start.getTime() + i * 86400000);
+      var cell = document.createElement("i");
+      cell.dataset.level = levels[i];
+
+      var n = counts && counts[i] !== undefined ? counts[i] : null;
+      var date = names[day.getMonth()] + " " + day.getDate() + ", " + day.getFullYear();
+      cell.title = n === null ? date
+        : (n === 1 ? "1 contribution on " : n + " contributions on ") + date;
+
+      gridFrag.appendChild(cell);
+
+      /* one label per month, placed on the week where it starts */
+      if (i % 7 === 0 && day.getMonth() !== seen) {
+        seen = day.getMonth();
+        var label = document.createElement("span");
+        label.textContent = names[seen];
+        label.style.gridColumn = (i / 7) + 1;
+        monthFrag.appendChild(label);
+      }
+    }
+
+    grid.textContent = "";
+    grid.appendChild(gridFrag);
+    if (months) {
+      /* the API may return 53 or 54 weeks depending on the day it is asked */
+      months.style.gridTemplateColumns = "repeat(" + Math.ceil(levels.length / 7) + ", 1fr)";
+      months.textContent = "";
+      months.appendChild(monthFrag);
+    }
+  }
+
+  function chartFromDataset() {
+    if (!grid) return;
+    drawChart(
+      grid.dataset.start,
+      grid.dataset.levels,
+      (grid.dataset.counts || "").split(",")
+    );
+  }
+
+  chartFromDataset();
+
+  if (grid && window.fetch) {
+    fetch("https://github-contributions-api.jogruber.de/v4/1ucas?y=last")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (data) {
+        var days = data.contributions;
+        if (!days || !days.length) return;
+
+        grid.dataset.start = days[0].date;
+        grid.dataset.levels = days.map(function (d) { return d.level; }).join("");
+        grid.dataset.counts = days.map(function (d) { return d.count; }).join(",");
+        chartFromDataset();
+
+        var total = document.getElementById("stat-total");
+        if (total && data.total && data.total.lastYear) {
+          total.textContent = data.total.lastYear;
+        }
+      })
+      .catch(function () { /* snapshot stands */ });
   }
 
   /* ---------- footer year ---------- */
