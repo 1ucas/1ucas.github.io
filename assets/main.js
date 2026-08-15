@@ -36,7 +36,12 @@
     }
   }
 
-  applyTheme(root.dataset.theme === "light" ? "light" : "dark");
+  /* If nothing stamped the root (JS-only entry points, embedded previews),
+     fall back to the OS preference rather than assuming dark. */
+  applyTheme(
+    root.dataset.theme ||
+    (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+  );
 
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {

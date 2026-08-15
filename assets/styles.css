@@ -30,6 +30,7 @@
   --pad: clamp(1.25rem, 4vw, 2rem);
 }
 
+/* Light palette, applied when the visitor picks light explicitly. */
 :root[data-theme="light"] {
   --bg: #fbf8f3;
   --bg-2: #f4efe6;
@@ -45,6 +46,27 @@
   --accent-2: #1c8583;
   --shadow: 0 1px 2px rgba(60, 45, 20, .06), 0 12px 28px -14px rgba(60, 45, 20, .22);
   --glow: rgba(255, 170, 60, .22);
+}
+
+/* Same palette when the OS asks for light and the visitor has not
+   chosen dark. Keeps the page correctly themed even with JS disabled. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #fbf8f3;
+    --bg-2: #f4efe6;
+    --surface: #ffffff;
+    --surface-2: #fefcf8;
+    --line: #e5dccd;
+    --line-soft: #efe8dc;
+    --text: #1a2129;
+    --muted: #5d6b7a;
+    --accent: #b06508;
+    --accent-ink: #fffaf2;
+    --accent-soft: rgba(176, 101, 8, .10);
+    --accent-2: #1c8583;
+    --shadow: 0 1px 2px rgba(60, 45, 20, .06), 0 12px 28px -14px rgba(60, 45, 20, .22);
+    --glow: rgba(255, 170, 60, .22);
+  }
 }
 
 /* ---------- base ---------- */
