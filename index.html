@@ -2,11 +2,459 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucas Maciel — Software Architect</title>
+  <meta name="description"
+    content="Lucas Maciel (@1ucas) — Software Architect at Mobile West. Mobile architecture across iOS, Android and Flutter, developer tooling, and AI agent engineering.">
+  <meta name="author" content="Lucas Maciel">
+  <meta name="theme-color" content="#0b0f14">
+
+  <link rel="canonical" href="https://1ucas.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/avatar.png">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Lucas Maciel — Software Architect">
+  <meta property="og:description"
+    content="Mobile architecture across iOS, Android and Flutter, developer tooling, and AI agent engineering.">
+  <meta property="og:url" content="https://1ucas.github.io/">
+  <meta property="og:image" content="https://1ucas.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Resolve the theme before first paint so there is no flash. -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (e) { }
+      var light = saved ? saved === "light"
+        : window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.dataset.theme = light ? "light" : "dark";
+      document.documentElement.style.colorScheme = light ? "light" : "dark";
+    })();
+  </script>
 </head>
 
 <body>
-    Olá Galera! - 2
+  <a class="skip-link" href="#main" data-pt="Pular para o conteúdo">Skip to content</a>
+
+  <header class="topbar">
+    <a class="mark" href="#top" aria-label="Lucas Maciel — home">
+      <span class="mark-glyph" aria-hidden="true">1u</span>
+      <span class="mark-name">Lucas Maciel</span>
+    </a>
+
+    <nav class="topnav" aria-label="Sections">
+      <a href="#work" data-pt="Projetos">Work</a>
+      <a href="#craft" data-pt="Stack">Craft</a>
+      <a href="#speaking" data-pt="Palestras">Speaking</a>
+      <a href="#contact" data-pt="Contato">Contact</a>
+    </nav>
+
+    <div class="switches">
+      <button class="switch" id="lang-toggle" type="button" aria-label="Switch language to Portuguese">
+        <span data-lang-label>PT</span>
+      </button>
+      <button class="switch" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" />
+          <path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9" />
+        </svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ───────────────────────── hero ───────────────────────── -->
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            <span data-pt="Arquiteto de Software · Brasil">Software Architect · Brazil</span>
+          </p>
+
+          <h1>Lucas Maciel</h1>
+
+          <p class="lede" data-pt="Eu projeto arquiteturas mobile que sobrevivem ao segundo ano — e as ferramentas que mantêm o time rápido enquanto isso.">
+            I design mobile architectures that survive their second year — and the tooling
+            that keeps a team fast while they get there.
+          </p>
+
+          <p class="sub" data-pt="Arquiteto de Software na <a href=&quot;https://www.mobilewest.com.br&quot; rel=&quot;noopener&quot;>Mobile West</a>. Uma década construindo para iOS, Android e cross-platform; hoje boa parte do meu tempo vai para ferramentas de desenvolvimento e engenharia de agentes de IA.">
+            Software Architect at <a href="https://www.mobilewest.com.br" rel="noopener">Mobile West</a>.
+            A decade of building for iOS, Android and cross-platform; these days a good share of
+            my time goes to developer tooling and AI agent engineering.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#work" data-pt="Ver os projetos">See the work</a>
+            <a class="btn" href="https://github.com/1ucas" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" stroke="none"
+                  d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
+              </svg>
+              GitHub
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/lucas-ramos-maciel/" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" stroke="none"
+                  d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21h-4z" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-portrait">
+          <img src="assets/avatar.png" width="311" height="311" alt="Portrait of Lucas Maciel" fetchpriority="high">
+          <figcaption class="portrait-caption">
+            <span class="mono">@1ucas</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span class="mono" data-pt="desde 2016">since 2016</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── pillars ───────────────────────── -->
+    <section class="section" id="about" aria-labelledby="about-h">
+      <div class="wrap">
+        <h2 class="section-title" id="about-h" data-pt="No que eu trabalho">What I work on</h2>
+
+        <div class="pillars">
+          <article class="pillar">
+            <span class="pillar-num mono" aria-hidden="true">01</span>
+            <h3 data-pt="Arquitetura Mobile">Mobile architecture</h3>
+            <p data-pt="Modularização, camadas compartilhadas e as decisões chatas que decidem se um app ainda é gostoso de mexer três anos depois. Nativo iOS e Android, Flutter e KMM — normalmente no mesmo binário.">
+              Modularization, shared layers, and the unglamorous decisions that determine whether an
+              app is still pleasant to work in three years later. Native iOS and Android, Flutter and
+              KMM — often in the same binary.
+            </p>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar-num mono" aria-hidden="true">02</span>
+            <h3 data-pt="Ferramentas de Desenvolvimento">Developer tooling</h3>
+            <p data-pt="Se um time repete o mesmo passo manual toda semana, isso é um bug de processo. Construo as ferramentas que apagam esse passo — GUIs para CLIs, automação de build e o encanamento de CI que ninguém quer manter.">
+              If a team repeats the same manual step every week, that is a process bug. I build the
+              tools that erase the step — GUIs over CLIs, build automation, and the CI plumbing
+              nobody wants to own.
+            </p>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar-num mono" aria-hidden="true">03</span>
+            <h3 data-pt="IA e Agentes">AI &amp; agents</h3>
+            <p data-pt="Onde estou gastando minha curiosidade agora: harnesses de agentes, engenharia de contexto e usar modelos como componentes de verdade num sistema — com dados citáveis, não com achismo.">
+              Where my curiosity currently goes: agent harnesses, context engineering, and treating
+              models as real components in a system — grounded in citable data rather than vibes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── featured work ───────────────────────── -->
+    <section class="section" id="work" aria-labelledby="work-h">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 class="section-title" id="work-h" data-pt="Trabalho em destaque">Featured work</h2>
+          <p class="section-sub" data-pt="Projetos públicos, escolhidos por conta do que resolvem — não pelo número de estrelas.">
+            Public projects, picked for what they solve rather than what they scored.
+          </p>
+        </header>
+
+        <div class="cards">
+
+          <article class="card card-lead">
+            <div class="card-top">
+              <h3><a href="https://github.com/1ucas/chordify" rel="noopener">Chordify</a></h3>
+              <span class="badge mono">Python</span>
+            </div>
+            <p data-pt="Transforma qualquer vídeo do YouTube em uma cifra com a letra alinhada. Chroma CQT/CENS com decodificação Viterbi ciente do baixo, separação opcional de stems com Demucs e transcrição via Whisper ou Parakeet. Roda 100% offline, sem API key.">
+              Turns any YouTube video into a chord chart with the lyrics aligned underneath.
+              CQT/CENS chroma with bass-aware Viterbi decoding, optional Demucs stem separation,
+              and lyric transcription through Whisper or Parakeet. Runs fully offline, no API keys.
+            </p>
+            <p class="card-note" data-pt="Nasceu de um problema real: as músicas que meu filho queria cantar não existiam em nenhum site de cifra. O detector é medido contra uma suíte sintética de ground-truth — 0,98 de acurácia média por frame.">
+              It started from a real problem: the songs my kid wanted to sing weren't on any chord
+              site. The detector is scored against a synthetic ground-truth suite — 0.98 mean frame
+              accuracy.
+            </p>
+            <ul class="tags">
+              <li>librosa</li>
+              <li>Whisper</li>
+              <li>Demucs</li>
+              <li>CLI</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3><a href="https://github.com/1ucas/xcodebuilder" rel="noopener">Xcodebuilder</a></h3>
+              <span class="badge mono">Swift</span>
+            </div>
+            <p data-pt="Uma GUI nativa de macOS para o xcodebuild — pense em &quot;Postman para xcodebuild&quot;. Detecta schemes, targets e destinations do projeto, mostra o comando gerado antes de rodar e faz stream da saída ao vivo.">
+              A native macOS GUI for <span class="mono">xcodebuild</span> — think "Postman for
+              xcodebuild". It detects schemes, targets and destinations from the project, previews
+              the generated command before running, and streams the output live.
+            </p>
+            <ul class="tags">
+              <li>SwiftUI</li>
+              <li>macOS</li>
+              <li>MIT</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3><a href="https://github.com/1ucas/ai-studies" rel="noopener">AI Study Guide</a></h3>
+              <span class="badge mono">HTML</span>
+            </div>
+            <p data-pt="Um guia de estudos bilíngue (EN / PT-BR) sobre engenharia de IA: panorama de modelos, harnesses, tipos de memória, engenharia de prompt e de contexto. Arquivo único, sem build e sem requisição externa — e todo número vem de uma fonte citável.">
+              A bilingual (EN / PT-BR) study guide on AI engineering: model landscape, harnesses,
+              memory types, prompt and context engineering. One file, no build step, no external
+              requests — and every figure traces back to a citable source.
+            </p>
+            <p class="card-links">
+              <a href="https://1ucas.github.io/ai-studies/" rel="noopener" data-pt="Ler o guia →">Read it live →</a>
+            </p>
+            <ul class="tags">
+              <li>Vanilla JS</li>
+              <li>Bilingual</li>
+              <li>Zero-dependency</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3><a href="https://github.com/1ucas/megazord-pokemon-mobile" rel="noopener">Megazord Pokémon</a></h3>
+              <span class="badge mono">Kotlin</span>
+            </div>
+            <p data-pt="Telas em Jetpack Compose, SwiftUI e Flutter convivendo em um app só, todas consumindo uma única camada de rede em KMM. Construído para responder na prática se as principais stacks mobile cabem no mesmo código — cabem.">
+              Jetpack Compose, SwiftUI and Flutter screens coexisting in one app, all consuming a
+              single KMM networking layer. Built to answer in practice whether the major mobile
+              stacks fit in one codebase — they do.
+            </p>
+            <ul class="tags">
+              <li>Compose</li>
+              <li>SwiftUI</li>
+              <li>Flutter</li>
+              <li>KMM</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3><a href="https://github.com/1ucas/recolocacoes-corona-virus" rel="noopener">Recolocações Corona</a></h3>
+              <span class="badge mono">Node.js</span>
+            </div>
+            <p data-pt="Um mural de vagas colaborativo, montado em poucos dias no começo da pandemia de 2020 com amigos da área, para ajudar profissionais de TI demitidos a se recolocarem. Aberto, descentralizado e feito para RHs consultarem direto.">
+              A collaborative job board, built in a few days at the start of the 2020 pandemic with
+              friends from the industry, to help laid-off Brazilian IT professionals land somewhere
+              new. Open, decentralized, and meant for recruiters to search directly.
+            </p>
+            <ul class="tags">
+              <li>Community</li>
+              <li>2020</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <h3><a href="https://github.com/1ucas/Replanner" rel="noopener">Replanner</a></h3>
+              <span class="badge mono">Swift</span>
+            </div>
+            <p data-pt="Os Lembretes da Apple renderizados como algo que dá para planejar: quadro Kanban, linha do tempo e big numbers. Um código SwiftUI só, rodando em iPhone, iPad e Mac.">
+              Apple Reminders rendered as something you can actually plan against: a Kanban board,
+              a timeline, and big numbers. One SwiftUI codebase running on iPhone, iPad and Mac.
+            </p>
+            <ul class="tags">
+              <li>SwiftUI</li>
+              <li>Multiplatform</li>
+              <li>EventKit</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── more repos ───────────────────────── -->
+    <section class="section section-tight" id="more" aria-labelledby="more-h">
+      <div class="wrap">
+        <h2 class="section-title" id="more-h" data-pt="Também no aberto">Also in the open</h2>
+
+        <ul class="repo-list">
+          <li>
+            <a href="https://github.com/1ucas/modularization-app-ios" rel="noopener">modularization-app-ios</a>
+            <span data-pt="Um app iOS modularizado de ponta a ponta — módulo de rotas, features nativas e um módulo Flutter no mesmo binário.">
+              A modular iOS app end to end — routing module, native features, and a Flutter module in the same binary.
+            </span>
+          </li>
+          <li>
+            <a href="https://github.com/1ucas/swift-full-stack" rel="noopener">swift-full-stack</a>
+            <span data-pt="Servidor e aplicativo escritos os dois em Swift, no mesmo repositório.">
+              Server side and application, both written in Swift, in one repository.
+            </span>
+          </li>
+          <li>
+            <a href="https://github.com/1ucas/poc-swift-async" rel="noopener">poc-swift-async</a>
+            <span data-pt="O que async / await realmente muda no código de chamada — antes e depois, lado a lado.">
+              What async / await actually changes in calling code — before and after, side by side.
+            </span>
+          </li>
+          <li>
+            <a href="https://github.com/1ucas/itunes-book-seeker" rel="noopener">itunes-book-seeker</a>
+            <span data-pt="App showcase sobre a API de busca do iTunes, usado como referência de evolução de plataforma.">
+              A showcase app over the iTunes Search API, kept as a reference for platform evolution.
+            </span>
+          </li>
+          <li>
+            <a href="https://github.com/1ucas/culto-domestico-app" rel="noopener">culto-domestico-app</a>
+            <span data-pt="App em Flutter para organizar e guardar o histórico do culto doméstico das famílias.">
+              A Flutter app for families to organize and keep the history of their home worship.
+            </span>
+          </li>
+          <li>
+            <a href="https://github.com/1ucas/kids-launcher" rel="noopener">kids-launcher</a>
+            <span data-pt="Um launcher Android enxuto para quando a criança pega o celular dos pais.">
+              A stripped-down Android launcher for when the kid gets hold of a parent's phone.
+            </span>
+          </li>
+        </ul>
+
+        <p class="more-link">
+          <a href="https://github.com/1ucas?tab=repositories" rel="noopener" data-pt="Todos os repositórios públicos no GitHub →">
+            All public repositories on GitHub →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── craft ───────────────────────── -->
+    <section class="section" id="craft" aria-labelledby="craft-h">
+      <div class="wrap">
+        <h2 class="section-title" id="craft-h" data-pt="Ferramentas do ofício">Tools of the trade</h2>
+
+        <div class="craft-grid">
+          <div class="craft-group">
+            <h3 data-pt="Mobile">Mobile</h3>
+            <ul class="chips">
+              <li>Swift</li><li>SwiftUI</li><li>UIKit</li><li>Kotlin</li>
+              <li>Jetpack Compose</li><li>Flutter</li><li>KMM</li><li>Objective-C</li>
+            </ul>
+          </div>
+          <div class="craft-group">
+            <h3 data-pt="Backend e Web">Backend &amp; web</h3>
+            <ul class="chips">
+              <li>Node.js</li><li>TypeScript</li><li>Python</li><li>C# / .NET</li>
+              <li>Java / Spring</li><li>Vapor</li>
+            </ul>
+          </div>
+          <div class="craft-group">
+            <h3 data-pt="Plataforma">Platform</h3>
+            <ul class="chips">
+              <li>CI/CD</li><li>Fastlane</li><li>Docker</li><li>GitHub Actions</li>
+              <li>Modularization</li><li>IaC</li>
+            </ul>
+          </div>
+          <div class="craft-group">
+            <h3 data-pt="IA">AI</h3>
+            <ul class="chips">
+              <li>Agent harnesses</li><li>Context engineering</li><li>Core ML</li><li>Whisper</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── speaking ───────────────────────── -->
+    <section class="section" id="speaking" aria-labelledby="speaking-h">
+      <div class="wrap">
+        <h2 class="section-title" id="speaking-h" data-pt="Palestras e estudo">Speaking &amp; study</h2>
+
+        <ol class="timeline">
+          <li>
+            <span class="tl-year mono">TDC</span>
+            <div>
+              <h3 data-pt="The Developer's Conference">The Developer's Conference</h3>
+              <p data-pt="Projetos de exemplo apresentados no TDC, publicados em Swift e em Kotlin para que a plateia saísse com o código na mão.">
+                Sample projects presented at TDC, published in both Swift and Kotlin so the room
+                could walk away with the code.
+              </p>
+              <p class="tl-links">
+                <a href="https://github.com/1ucas/swift-pokemon-tdc" rel="noopener">swift-pokemon-tdc</a>
+                <a href="https://github.com/1ucas/kotlin-pokemon-app" rel="noopener">kotlin-pokemon-app</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="tl-year mono">PUC</span>
+            <div>
+              <h3 data-pt="Pós-graduação, PUC Minas">Post-grad, PUC Minas</h3>
+              <p data-pt="Arquitetura de backend e de front-end, com o trabalho publicado no aberto: microsserviços distribuídos, um gateway de APIs e tutoriais de arquitetura Java.">
+                Backend and front-end architecture, with the coursework published in the open:
+                distributed microservices, an API gateway, and Java architecture tutorials.
+              </p>
+              <p class="tl-links">
+                <a href="https://github.com/1ucas/arq-nv-trabalho-final" rel="noopener">arq-nv-trabalho-final</a>
+                <a href="https://github.com/1ucas/arq-java-tutoriais" rel="noopener">arq-java-tutoriais</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="tl-year mono">2016</span>
+            <div>
+              <h3 data-pt="Uma década no GitHub">A decade on GitHub</h3>
+              <p data-pt="Do primeiro app em Objective-C em 2016 às ferramentas de IA de hoje — parte do caminho está preservado no Arctic Code Vault.">
+                From a first Objective-C app in 2016 to today's AI tooling — some of it preserved
+                in the Arctic Code Vault along the way.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── contact ───────────────────────── -->
+    <section class="section section-contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap contact-inner">
+        <h2 class="section-title" id="contact-h" data-pt="Vamos conversar">Get in touch</h2>
+        <p class="contact-lede" data-pt="Aberto a conversas sobre arquitetura mobile, plataformas para times de produto e o que realmente funciona ao colocar agentes de IA para trabalhar.">
+          Happy to talk about mobile architecture, platform work for product teams, and what
+          actually holds up when you put AI agents to work.
+        </p>
+
+        <div class="contact-links">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/lucas-ramos-maciel/" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/1ucas" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.mobilewest.com.br" rel="noopener">Mobile West</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="mono">© <span id="year">2026</span> Lucas Maciel</p>
+      <p class="footer-quip" data-pt="Melhor marido do mundo (segundo uma caneca que eu tenho). Mas o mais importante… main de Katarina.">
+        Best husband in the world (according to a mug I own). But most importantly… Katarina main.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 
 </html>
