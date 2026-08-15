@@ -29,7 +29,8 @@
       overflow: hidden;
     }
 
-    .lost-code {
+    /* scoped past `.lost p` below, which would otherwise win on specificity */
+    .lost .lost-code {
       font-family: var(--mono);
       font-size: clamp(4rem, 18vw, 9rem);
       font-weight: 700;

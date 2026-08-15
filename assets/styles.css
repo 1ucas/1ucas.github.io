@@ -1114,8 +1114,15 @@ img {
   position: relative;
   height: 86px;
   margin: -1.5rem -1.45rem 0;
-  background: var(--art) center / cover no-repeat;
+  background: center / cover no-repeat;
 }
+
+.card-art[data-art="chord"] { background-image: url("art/chord.webp"); }
+.card-art[data-art="build"] { background-image: url("art/build.webp"); }
+.card-art[data-art="study"] { background-image: url("art/study.webp"); }
+.card-art[data-art="layers"] { background-image: url("art/layers.webp"); }
+.card-art[data-art="network"] { background-image: url("art/network.webp"); }
+.card-art[data-art="plan"] { background-image: url("art/plan.webp"); }
 
 .card-lead .card-art {
   height: 108px;
@@ -1126,8 +1133,9 @@ img {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-      color-mix(in srgb, var(--surface) 30%, transparent) 0%,
-      var(--surface) 96%);
+      color-mix(in srgb, var(--surface) 15%, transparent) 0%,
+      color-mix(in srgb, var(--surface) 55%, transparent) 55%,
+      var(--surface) 100%);
 }
 
 :root[data-theme="light"] .card-art {

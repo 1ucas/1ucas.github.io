@@ -17,6 +17,11 @@ assets/
   horizon.webp                sunset band behind the contact section
   og.png                      social share card (1200×630)
   favicon.svg
+  art/                        generated artwork
+    hero.webp                 backdrop behind the hero
+    chord|build|study|        one strip per featured project
+      layers|network|plan.webp
+    lost.webp                 404 backdrop
 robots.txt, sitemap.xml
 .nojekyll                     serve the files as-is, no Jekyll build
 ```
@@ -42,9 +47,33 @@ Colours are CSS custom properties defined once at the top of `styles.css`. The
 contribution squares derive their five steps from `--accent` with `color-mix`,
 so re-theming the accent re-themes the chart for free.
 
-`horizon.webp` was generated locally with Stable Diffusion Turbo — an
-open-weights model, run on CPU, prompted for a flat-vector desert sunset. It is
-decorative only.
+## The artwork
+
+Everything in `art/`, plus `horizon.webp` and the background of `og.png`, was
+generated locally with [Stable Diffusion Turbo](https://huggingface.co/stabilityai/sd-turbo)
+— open weights, run on CPU, no external service. All of it is decorative.
+
+The set holds together because every prompt shares one style prefix:
+
+```
+flat vector poster art, minimal geometric, deep navy blue and amber gold,
+clean screen print, limited palette, no text, no letters, no people
+```
+
+with only the subject changing per image — sound waves for Chordify, an
+isometric blueprint for Xcodebuilder, a constellation for the study guide, and
+so on. Three seeds were rendered per prompt and the best kept.
+
+Two things worth knowing before regenerating: the model is far better at
+abstract pattern than at literal objects, so prompts that name a *texture* beat
+prompts that name a *thing*; and card strips are cropped to a horizontal band
+before export, because CSS `cover` on a square source would otherwise slice an
+arbitrary part of the composition.
+
+Card art is wired through `data-art="<key>"` on `.card-art`, with the `url()`
+living in `styles.css`. That is deliberate — a `url()` inside a custom property
+set from the HTML resolves against the stylesheet that consumes it, not the
+document, which silently produced `assets/assets/art/...`.
 
 ## The stats section
 
