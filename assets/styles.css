@@ -1122,7 +1122,6 @@ img {
 .card-art[data-art="study"] { background-image: url("art/study.webp"); }
 .card-art[data-art="layers"] { background-image: url("art/layers.webp"); }
 .card-art[data-art="network"] { background-image: url("art/network.webp"); }
-.card-art[data-art="plan"] { background-image: url("art/plan.webp"); }
 
 .card-lead .card-art {
   height: 108px;

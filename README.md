@@ -20,7 +20,7 @@ assets/
   art/                        generated artwork
     hero.webp                 backdrop behind the hero
     chord|build|study|        one strip per featured project
-      layers|network|plan.webp
+      layers|network.webp
     lost.webp                 404 backdrop
 robots.txt, sitemap.xml
 .nojekyll                     serve the files as-is, no Jekyll build
