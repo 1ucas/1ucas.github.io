@@ -6,23 +6,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lucas Maciel — Software Architect</title>
   <meta name="description"
-    content="Lucas Maciel (@1ucas) — Software Architect at Mobile West and creator of Indilo, available on the App Store, and Takonto, coming soon. Mobile architecture, developer tooling, and AI agents.">
+    content="Software Architect at Mobile West. Creator of Indilo and Takonto. Explore Lucas Maciel's work in mobile architecture, developer tooling, and AI agents.">
   <meta name="author" content="Lucas Maciel">
+  <meta name="application-name" content="Lucas Maciel">
+  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0b0f14">
 
   <link rel="canonical" href="https://1ucas.github.io/">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/avatar.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta name="apple-mobile-web-app-title" content="Lucas Maciel">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
 
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Lucas Maciel">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Lucas Maciel — Software Architect">
   <meta property="og:description"
-    content="Creator of Indilo, available on the App Store, and Takonto, coming soon. Mobile architecture, developer tooling, and AI agents.">
+    content="Software Architect at Mobile West. Creator of Indilo and Takonto. Mobile architecture, developer tooling, and AI agents.">
   <meta property="og:url" content="https://1ucas.github.io/">
-  <meta property="og:image" content="https://1ucas.github.io/assets/og.png">
+  <meta property="og:image" content="https://1ucas.github.io/assets/og.png?v=2">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Lucas Maciel, Software Architect. Mobile architecture, developer tooling, and AI agents. Creator of Indilo and Takonto.">
+  <meta property="profile:first_name" content="Lucas">
+  <meta property="profile:last_name" content="Maciel">
+  <meta property="profile:username" content="1ucas">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lucas Maciel — Software Architect">
+  <meta name="twitter:description"
+    content="Software Architect at Mobile West. Creator of Indilo and Takonto. Mobile architecture, developer tooling, and AI agents.">
+  <meta name="twitter:image" content="https://1ucas.github.io/assets/og.png?v=2">
+  <meta name="twitter:image:alt" content="Lucas Maciel, Software Architect. Mobile architecture, developer tooling, and AI agents. Creator of Indilo and Takonto.">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://1ucas.github.io/#profile",
+      "url": "https://1ucas.github.io/",
+      "name": "Lucas Maciel — Software Architect",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://1ucas.github.io/#lucas",
+        "name": "Lucas Maciel",
+        "alternateName": "1ucas",
+        "url": "https://1ucas.github.io/",
+        "image": "https://1ucas.github.io/assets/avatar.png",
+        "jobTitle": "Software Architect",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Mobile West",
+          "url": "https://www.mobilewest.com.br"
+        },
+        "sameAs": [
+          "https://github.com/1ucas",
+          "https://www.linkedin.com/in/lucas-ramos-maciel/"
+        ]
+      }
+    }
+  </script>
 
   <link rel="stylesheet" href="assets/styles.css?v=530bf6c43335">
 
@@ -35,6 +85,7 @@
         : window.matchMedia("(prefers-color-scheme: light)").matches;
       document.documentElement.dataset.theme = light ? "light" : "dark";
       document.documentElement.style.colorScheme = light ? "light" : "dark";
+      document.querySelector('meta[name="theme-color"]').content = light ? "#fbf8f3" : "#0b0f14";
     })();
   </script>
 </head>

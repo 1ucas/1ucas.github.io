@@ -7,7 +7,10 @@
   <title>Not found — Lucas Maciel</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0b0f14">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/styles.css?v=530bf6c43335">
   <script>
     (function () {
@@ -17,6 +20,7 @@
         : window.matchMedia("(prefers-color-scheme: light)").matches;
       document.documentElement.dataset.theme = light ? "light" : "dark";
       document.documentElement.style.colorScheme = light ? "light" : "dark";
+      document.querySelector('meta[name="theme-color"]').content = light ? "#fbf8f3" : "#0b0f14";
     })();
   </script>
   <style>

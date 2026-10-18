@@ -1,13 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lucas Maciel">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lucas Maciel — 1u"><defs><clipPath id="tile"><rect width="512" height="512" rx="112" /></clipPath></defs><g clip-path="url(#tile)">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffc978" />
-      <stop offset="100%" stop-color="#f59322" />
+    <linearGradient id="amber" x1="0" y1="0" x2="0.7" y2="1">
+      <stop stop-color="#ffd28b" />
+      <stop offset="1" stop-color="#ffab40" />
     </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0" r="1">
+      <stop stop-color="#ffb454" stop-opacity=".14" />
+      <stop offset="1" stop-color="#ffb454" stop-opacity="0" />
+    </radialGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0b0f14" />
-  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="url(#g)" stroke-opacity=".35" stroke-width="1.5" />
-  <text x="32" y="43" text-anchor="middle" fill="url(#g)"
-    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
-    font-size="30" font-weight="700" letter-spacing="-1.5">1u</text>
-</svg>
+  <rect width="512" height="512" fill="#0b0f14" />
+  <rect width="512" height="512" fill="url(#glow)" />
+  <!-- The monogram stays inside the central 80% maskable safe circle.
+       Keep the background square and opaque; each OS supplies its own mask. -->
+  <g fill="url(#amber)" transform="translate(-4 -8)">
+    <path d="M130 207 177 164H208V316H245V352H128V316H166V215L151 229Z" />
+    <path d="M268 204H306V294Q306 318 330 318T354 294V204H392V352H356V335Q341 358 313 358 268 358 268 299Z" />
+  </g>
+</g></svg>

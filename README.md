@@ -10,6 +10,9 @@ by GitHub Pages.
 ```
 index.html                    the page
 404.html                      not-found page
+site.webmanifest              Home Screen name, launch URL, and display mode
+apple-touch-icon.png          opaque 180×180 iPhone Home Screen icon
+favicon.ico                   16/32/48px browser fallback
 assets/
   styles.css                  design tokens + layout
   main.js                     theme switch, EN/PT-BR switch, contribution chart
@@ -18,7 +21,10 @@ assets/
   icons/                      original project logos and favicons for the cards
   horizon.webp                sunset band behind the contact section
   og.png                      social share card (1200×630)
-  favicon.svg
+  share-card.html             editable source for the share card
+  icon.svg                    full-bleed source for the amber 1u mark
+  icon-192.png, icon-512.png   regular and maskable manifest icons
+  favicon.svg                 rounded browser version of the same mark
   art/                        generated artwork
     hero.webp                 backdrop behind the hero
     chord|build|study|        one strip per featured project
@@ -26,6 +32,7 @@ assets/
     lost.webp                 404 backdrop
 robots.txt, sitemap.xml
 .nojekyll                     serve the files as-is, no Jekyll build
+scripts/generate-brand-assets.cjs  optional artwork export tool
 ```
 
 `.nojekyll` tells GitHub Pages to publish the directory exactly as committed
@@ -66,6 +73,30 @@ so re-theming the accent re-themes the chart for free.
 Both HTML pages version the stylesheet URL with the first 12 characters of its
 SHA-256 hash. Whenever `styles.css` changes, update `?v=` in `index.html` and
 `404.html` so a cached stylesheet cannot leave new markup without its styles.
+
+## Sharing and iPhone Home Screen
+
+Open Graph and Twitter cards share the same title, description, and 1200×630 PNG,
+with image dimensions and accessible image descriptions. Profile metadata and
+`ProfilePage`/`Person` structured data identify the author and his public profiles.
+The image URL is versioned; bump its `?v=` in both tags when exporting new artwork
+so sharing services can request a fresh image. Services may still cache the page.
+
+The amber `1u` mark is used for favicons and Home Screen icons. The Apple icon is
+an opaque, square 180×180 PNG; iOS supplies its rounded mask. The manifest's
+192×192 and 512×512 PNGs keep the mark inside the maskable safe circle and use
+the same full-bleed background.
+
+On iPhone, open the site in Safari, choose **Share → Add to Home Screen**, leave
+the name as **Lucas Maciel**, and tap **Add**. If shown, keep **Open as Web App**
+enabled. The manifest launches `/` in standalone mode. This is an online
+portfolio; there is no service worker or offline caching.
+
+The optional artwork exporter uses Node.js with `sharp` and `playwright`, plus
+Chromium (set `CHROMIUM_PATH` if needed). Run `node scripts/generate-brand-assets.cjs`
+after editing `assets/icon.svg` or `assets/share-card.html`, then commit the
+generated files. The card uses Liberation Sans/Mono when installed, with Arial
+and monospace fallbacks. Publishing still serves the committed assets directly.
 
 ## The artwork
 
