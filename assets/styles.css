@@ -494,7 +494,7 @@ img {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.4rem;
 }
 
@@ -520,10 +520,6 @@ img {
   background:
     linear-gradient(180deg, var(--accent-soft) 0%, transparent 55%),
     var(--surface);
-}
-
-.product-cards {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 
 .card-product {
@@ -569,20 +565,19 @@ img {
   text-decoration: none;
 }
 
-.work-subtitle {
-  margin: 2.6rem 0 1.4rem;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
 .card-top {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
 
 .card h3 {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  min-width: 0;
   font-size: 1.22rem;
 }
 
@@ -620,6 +615,10 @@ img {
   font-size: .92rem;
   font-weight: 550;
   text-decoration: none;
+}
+
+.card-links:last-child {
+  margin-top: auto;
 }
 
 .tags {
@@ -898,9 +897,41 @@ img {
   margin-bottom: .7rem;
 }
 
-.card-emoji {
-  margin-right: .45rem;
-  font-size: .95em;
+.card-logo {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* These projects publish their marks inside wider README artwork. Show the
+   original mark without changing the source image or inventing a new logo. */
+.card-logo-crop {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-logo-crop img {
+  position: absolute;
+  max-width: none;
+  height: auto;
+}
+
+.card-logo-chordify img {
+  width: 868.8px;
+  left: -18px;
+  top: -16px;
+}
+
+.card-logo-excalitabs {
+  background: #fff;
+}
+
+.card-logo-excalitabs img {
+  width: 126.67px;
+  left: -3.33px;
+  top: 0;
 }
 
 /* ---------- github stats ---------- */

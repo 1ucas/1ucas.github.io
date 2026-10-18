@@ -15,6 +15,7 @@ assets/
   main.js                     theme switch, EN/PT-BR switch, contribution chart
   avatar.png                  portrait
   indilo.png, takonto.png      app icons for the two main projects
+  icons/                      original project logos and favicons for the cards
   horizon.webp                sunset band behind the contact section
   og.png                      social share card (1200×630)
   favicon.svg
@@ -34,7 +35,16 @@ are served under the names they have in the repo.
 The featured section leads with my two main apps: **Indilo**, available on the
 [App Store](https://apps.apple.com/br/app/indilo/id6818150840), and **Takonto**,
 coming soon. Both cards link to their public websites and use app icons copied
-from their respective site assets. Open-source projects and experiments follow.
+from their respective site assets. The next section features **Mini Ping**,
+**Bolão da Mega**, and **Food Racer**, followed by open-source projects and
+experiments. Each section uses the same heading spacing and card layout.
+Card actions sit at the bottom so their links align across a row.
+
+Card logos come from each project's existing app icon, favicon, or published
+branding. Chordify and Excalitabs use their original README images, clipped in
+CSS to show the brand mark. Food Racer uses its live website's app icon, and
+Swinject uses its official GitHub organization avatar. All icons are served
+locally.
 
 ## Design notes
 
@@ -52,6 +62,10 @@ copy means writing both, on one line, or it silently stays English.
 Colours are CSS custom properties defined once at the top of `styles.css`. The
 contribution squares derive their five steps from `--accent` with `color-mix`,
 so re-theming the accent re-themes the chart for free.
+
+Both HTML pages version the stylesheet URL with the first 12 characters of its
+SHA-256 hash. Whenever `styles.css` changes, update `?v=` in `index.html` and
+`404.html` so a cached stylesheet cannot leave new markup without its styles.
 
 ## The artwork
 
