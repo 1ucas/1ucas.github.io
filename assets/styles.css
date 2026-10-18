@@ -522,6 +522,59 @@ img {
     var(--surface);
 }
 
+.product-cards {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.card-product {
+  padding: 1.7rem;
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  background:
+    linear-gradient(160deg, var(--accent-soft), transparent 65%),
+    var(--surface);
+}
+
+.product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  margin-bottom: .3rem;
+}
+
+.product-icon {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+}
+
+.card-product h3 {
+  font-size: 1.6rem;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .8rem 1.2rem;
+  margin-top: auto;
+  padding-top: .6rem;
+}
+
+.product-actions a {
+  font-size: .9rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+.work-subtitle {
+  margin: 2.6rem 0 1.4rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
 .card-top {
   display: flex;
   align-items: baseline;

@@ -14,6 +14,7 @@ assets/
   styles.css                  design tokens + layout
   main.js                     theme switch, EN/PT-BR switch, contribution chart
   avatar.png                  portrait
+  indilo.png, takonto.png      app icons for the two main projects
   horizon.webp                sunset band behind the contact section
   og.png                      social share card (1200×630)
   favicon.svg
@@ -29,6 +30,11 @@ robots.txt, sitemap.xml
 `.nojekyll` tells GitHub Pages to publish the directory exactly as committed
 instead of running it through Jekyll. Nothing here needs a build step, and files
 are served under the names they have in the repo.
+
+The featured section leads with my two main apps: **Indilo**, available on the
+[App Store](https://apps.apple.com/br/app/indilo/id6818150840), and **Takonto**,
+coming soon. Both cards link to their public websites and use app icons copied
+from their respective site assets. Open-source projects and experiments follow.
 
 ## Design notes
 
