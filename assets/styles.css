@@ -430,10 +430,6 @@ img {
   border-bottom: 1px solid var(--line-soft);
 }
 
-.section-tight {
-  padding-block: clamp(2.6rem, 6vw, 4rem);
-}
-
 .section-title {
   font-size: clamp(1.5rem, 3.2vw, 2rem);
   letter-spacing: -.025em;
@@ -638,38 +634,7 @@ img {
   font-size: .75rem;
 }
 
-/* ---------- repo list ---------- */
-
-.repo-list {
-  display: grid;
-  gap: .15rem;
-}
-
-.repo-list li {
-  display: grid;
-  grid-template-columns: minmax(190px, 15rem) 1fr;
-  gap: .4rem 1.5rem;
-  padding: .85rem .6rem;
-  border-radius: 10px;
-  border-bottom: 1px solid var(--line-soft);
-  transition: background .15s ease;
-}
-
-.repo-list li:hover {
-  background: var(--surface);
-}
-
-.repo-list a {
-  font-family: var(--mono);
-  font-size: .9rem;
-  text-decoration: none;
-  font-weight: 550;
-}
-
-.repo-list span {
-  color: var(--muted);
-  font-size: .93rem;
-}
+/* ---------- more link ---------- */
 
 .more-link {
   margin-top: 1.6rem;
@@ -680,87 +645,176 @@ img {
   text-decoration: none;
 }
 
-/* ---------- craft ---------- */
+/* ---------- shipping timeline ---------- */
 
-.craft-grid {
+/* One rail down the left. Each year is a dot on it, and that year's
+   projects sit beside it as a row of tiles, up to four across. */
+.ship-log {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.8rem;
+  gap: 2.6rem;
+  margin-left: .35rem;
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--line);
 }
 
-.craft-group h3 {
-  font-size: .82rem;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+.ship-year {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.ship-year-label {
+  position: relative;
   color: var(--accent);
-  margin-bottom: .9rem;
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1;
 }
 
-.chips {
+/* Centred on the rail, which is .ship-log's left border. */
+.ship-year-label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(-1.75rem - 6px);
+  width: 11px;
+  height: 11px;
+  margin-top: -5.5px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.ship-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1.2rem 1.4rem;
+}
+
+.ship-item {
+  display: flex;
+  gap: 1.4rem;
+  padding-top: .85rem;
+  border-top: 1px solid var(--line);
+}
+
+/* A year with a single entry keeps it tile-sized instead of
+   stretching it across the whole row. */
+.ship-item:only-child {
+  max-width: 40rem;
+}
+
+/* Not out yet: no link, and a dashed rule instead of a solid one. */
+.ship-item.is-soon {
+  border-top-style: dashed;
+}
+
+.ship-item.is-soon .ship-date {
+  color: var(--accent);
+}
+
+.ship-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: .3rem;
+  min-width: 0;
+}
+
+.ship-item.is-app,
+.ship-item.is-first {
+  padding: 1rem 1.15rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  border-radius: 12px;
+  background:
+    linear-gradient(160deg, var(--accent-soft), transparent 70%),
+    var(--surface);
+}
+
+.ship-date {
+  color: var(--muted);
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
+.ship-head {
   display: flex;
   flex-wrap: wrap;
-  gap: .45rem;
+  align-items: center;
+  gap: .3rem .55rem;
 }
 
-.chips li {
-  padding: .3rem .7rem;
-  background: var(--surface);
+.ship-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.ship-head h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  overflow-wrap: anywhere;
+}
+
+.ship-head h4 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.ship-head h4 a:hover {
+  color: var(--accent);
+}
+
+.ship-kind {
+  padding: .05rem .5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .7rem;
+}
+
+.ship-body p {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.ship-body .ship-span {
+  margin-top: auto;
+  padding-top: .45rem;
+  font-family: var(--mono);
+  font-size: .76rem;
+}
+
+/* 2014: where the rail starts. Teal, so it doesn't read as a launch. */
+.is-origin .ship-year-label {
+  color: var(--accent-2);
+}
+
+.ship-item.is-first {
+  align-items: center;
+  border-color: color-mix(in srgb, var(--accent-2) 40%, var(--line));
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--accent-2) 12%, transparent), transparent 70%),
+    var(--surface);
+}
+
+.badge-first {
+  background: color-mix(in srgb, var(--accent-2) 14%, transparent);
+  color: var(--accent-2);
+}
+
+.ship-shot {
+  flex: none;
+  width: 120px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  font-size: .85rem;
-  color: var(--text);
-}
-
-/* ---------- timeline ---------- */
-
-.timeline {
-  display: grid;
-  gap: 1.6rem;
-}
-
-.timeline li {
-  display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 1.4rem;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.timeline li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.tl-year {
-  padding-top: .15rem;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: .9rem;
-  letter-spacing: .02em;
-}
-
-.timeline h3 {
-  font-size: 1.08rem;
-  margin-bottom: .4rem;
-}
-
-.timeline p {
-  color: var(--muted);
-  font-size: .96rem;
-  max-width: 62ch;
-}
-
-.tl-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: .6rem;
-}
-
-.tl-links a {
-  font-family: var(--mono);
-  font-size: .84rem;
-  text-decoration: none;
+  box-shadow: var(--shadow);
+  transform: rotate(2deg);
 }
 
 /* ---------- contact ---------- */
@@ -839,14 +893,8 @@ img {
     order: -1;
   }
 
-  .repo-list li {
-    grid-template-columns: 1fr;
-    gap: .2rem;
-  }
-
-  .timeline li {
-    grid-template-columns: 1fr;
-    gap: .5rem;
+  .ship-shot {
+    width: 84px;
   }
 
   .footer-inner {

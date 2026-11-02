@@ -19,6 +19,8 @@ assets/
   avatar.png                  portrait
   indilo.png, takonto.png,    app icons for the three main apps
     playlock.png
+  culto-domestico.png         Play Store app icon on white, for the timeline
+  pirates-game.webp           2014 screenshot of the first repo, for the timeline
   icons/                      original project logos and favicons for the cards
   horizon.webp                sunset band behind the contact section
   og.png                      social share card (1200×630)
@@ -47,14 +49,33 @@ The featured section leads with my three apps on the App Store:
 links to the App Store listing and the app's public website, and uses the app
 icon copied from that site's assets. The next section features **Mini Ping**,
 **Bolão da Mega**, and **Food Racer**, followed by open-source projects and
-experiments. Each section uses the same heading spacing and card layout.
-Card actions sit at the bottom so their links align across a row.
+experiments, then the timeline. Each section uses the same heading spacing and
+card layout. Card actions sit at the bottom so their links align across a row.
 
 Card logos come from each project's existing app icon, favicon, or published
 branding. Chordify and Excalitabs use their original README images, clipped in
 CSS to show the brand mark. Food Racer uses its live website's app icon, and
 Swinject uses its official GitHub organization avatar. All icons are served
 locally.
+
+## The timeline
+
+A hand-curated list of projects, newest first, grouped by year. Each year is a
+dot on one rail, with its projects beside it as tiles, up to four across. Store
+apps get a card with their icon and store badge; the 2014 entry, the first
+repository on record, gets a teal card with a screenshot of the game.
+
+Entries are dated by different events, so the section makes no single claim
+about what the date means:
+
+- **Store apps**: release date on the App Store or Google Play.
+- **Open-source repos**: creation date of the public repository.
+- **Web products** (Mini Ping, Bolão da Mega, Food Racer): first commit, since
+  their launch dates are not recorded here.
+- **Mobile West**: the year it was founded. **Agent Sync** is listed as *soon*.
+
+Projects whose repositories are private link to their public website or store
+listing, never to the repository. Agent Sync has neither yet, so it has no link.
 
 ## Design notes
 

@@ -74,7 +74,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="assets/styles.css?v=530bf6c43335">
+  <link rel="stylesheet" href="assets/styles.css?v=ad355d55cf84">
 
   <!-- Resolve the theme before first paint so there is no flash. -->
   <script>
@@ -101,7 +101,7 @@
 
     <nav class="topnav" aria-label="Sections">
       <a href="#work" data-pt="Projetos">Work</a>
-      <a href="#craft" data-pt="Stack">Craft</a>
+      <a href="#timeline" data-pt="Linha do tempo">Timeline</a>
       <a href="#stats" data-pt="Números">Stats</a>
       <a href="#contact" data-pt="Contato">Contact</a>
     </nav>
@@ -448,68 +448,258 @@
       </div>
     </section>
 
-    <!-- ───────────────────────── more repos ───────────────────────── -->
-    <section class="section section-tight" id="more" aria-labelledby="more-h">
+    <!-- ───────────────────────── timeline ───────────────────────── -->
+    <section class="section" id="timeline" aria-labelledby="timeline-h">
       <div class="wrap">
-        <h2 class="section-title" id="more-h" data-pt="Também no aberto">Also in the open</h2>
+        <header class="section-head">
+          <h2 class="section-title" id="timeline-h" data-pt="🚀 Linha do tempo">🚀 Timeline</h2>
+        </header>
 
-        <ul class="repo-list">
-          <li>
-            <a href="https://github.com/1ucas/culto-domestico-app" rel="noopener">culto-domestico-app</a>
-            <span data-pt="App em Flutter para organizar o culto doméstico das famílias.">
-              Flutter app for families to organize their home worship.
-            </span>
+        <ol class="ship-log">
+
+          <li class="ship-year">
+            <h3 class="ship-year-label">2026</h3>
+            <ol class="ship-items">
+              <li class="ship-item is-app">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2026-10-26" data-pt="26 out">Oct 26</time>
+                  <div class="ship-head">
+                    <img class="ship-icon" src="assets/playlock.png" width="26" height="26" alt="" loading="lazy">
+                    <h4><a href="https://playlock.com.br/" rel="noopener">Playlock</a></h4>
+                    <span class="badge">App Store</span>
+                  </div>
+                  <p data-pt="Um player de vídeo para crianças pequenas que só toca o que você escolheu.">A video player for little kids that only plays what you picked.</p>
+                </div>
+              </li>
+              <li class="ship-item is-app">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2026-10-22" data-pt="22 out">Oct 22</time>
+                  <div class="ship-head">
+                    <img class="ship-icon" src="assets/takonto.png" width="26" height="26" alt="" loading="lazy">
+                    <h4><a href="https://takonto.com.br/" rel="noopener">Takonto</a></h4>
+                    <span class="badge">App Store</span>
+                  </div>
+                  <p data-pt="Escaneie a nota do mercado e veja para onde o dinheiro foi.">Scan a grocery receipt and see where the money went.</p>
+                </div>
+              </li>
+              <li class="ship-item is-app">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2026-10-05" data-pt="5 out">Oct 5</time>
+                  <div class="ship-head">
+                    <img class="ship-icon" src="assets/indilo.png" width="26" height="26" alt="" loading="lazy">
+                    <h4><a href="https://indilo.com.br/" rel="noopener">Indilo</a></h4>
+                    <span class="badge">App Store</span>
+                  </div>
+                  <p data-pt="Profissionais de confiança, e quem indicou cada um.">Trusted professionals, and who recommended each one.</p>
+                </div>
+              </li>
+            </ol>
+            <ol class="ship-items">
+              <li class="ship-item is-soon">
+                <div class="ship-body">
+                  <span class="ship-date mono" data-pt="em breve">soon</span>
+                  <div class="ship-head">
+                    <h4>Agent Sync</h4>
+                    <span class="ship-kind" data-pt="agentes de IA">AI agents</span>
+                  </div>
+                  <p data-pt="Skills, regras e servidores MCP escritos uma vez e sincronizados com todos os seus agentes de código.">Skills, rules and MCP servers, written once and synced to every AI coding agent you use.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2026-05-18" data-pt="mai">May</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/chordify" rel="noopener">Chordify</a></h4>
+                    <span class="ship-kind" data-pt="código aberto">open source</span>
+                  </div>
+                  <p data-pt="Vídeo do YouTube → cifra com a letra alinhada, offline.">YouTube video → chord chart with the lyrics aligned, offline.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2026-05-14" data-pt="mai">May</time>
+                  <div class="ship-head">
+                    <h4><a href="https://1ucas.github.io/ai-studies/" rel="noopener">AI Study Guide</a></h4>
+                    <span class="ship-kind" data-pt="código aberto">open source</span>
+                  </div>
+                  <p data-pt="Guia bilíngue de engenharia de IA, num arquivo só.">Bilingual guide to AI engineering, in a single file.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2026-04-24" data-pt="abr">Apr</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/excalitabs" rel="noopener">Excalitabs</a></h4>
+                    <span class="ship-kind" data-pt="código aberto">open source</span>
+                  </div>
+                  <p data-pt="Excalidraw com abas.">Excalidraw with tabs.</p>
+                </div>
+              </li>
+            </ol>
           </li>
-          <li>
-            <a href="https://github.com/1ucas/kids-launcher" rel="noopener">kids-launcher</a>
-            <span data-pt="Launcher Android enxuto para quando a criança pega o celular.">
-              Stripped-down Android launcher for when the kid grabs the phone.
-            </span>
+
+          <li class="ship-year">
+            <h3 class="ship-year-label">2025</h3>
+            <ol class="ship-items">
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2025-12-13" data-pt="dez">Dec</time>
+                  <div class="ship-head">
+                    <h4><a href="https://foodracer.com.br/" rel="noopener">Food Racer</a></h4>
+                    <span class="ship-kind">web</span>
+                  </div>
+                  <p data-pt="Corrida de delivery 3D multiplayer no navegador.">A multiplayer 3D delivery race in the browser.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2025-11-11" data-pt="nov">Nov</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/xcodebuilder" rel="noopener">Xcodebuilder</a></h4>
+                    <span class="ship-kind" data-pt="código aberto">open source</span>
+                  </div>
+                  <p data-pt="Postman para o xcodebuild.">Postman for <span class="mono">xcodebuild</span>.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2025-10-05" data-pt="out">Oct</time>
+                  <div class="ship-head">
+                    <h4><a href="https://miniping.com.br/" rel="noopener">Mini Ping</a></h4>
+                    <span class="ship-kind">web</span>
+                  </div>
+                  <p data-pt="Avisos do espaço kids direto no celular dos pais.">Kids' space alerts, straight to parents' phones.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2025-01-26" data-pt="jan">Jan</time>
+                  <div class="ship-head">
+                    <h4><a href="https://bolao.tec.br/" rel="noopener">Bolão da Mega</a></h4>
+                    <span class="ship-kind">web</span>
+                  </div>
+                  <p data-pt="Bolão da Mega-Sena com os amigos: link, pagamentos e resultados.">Mega-Sena pools with friends: invite link, payments, results.</p>
+                </div>
+              </li>
+            </ol>
           </li>
-        </ul>
+
+          <li class="ship-year">
+            <h3 class="ship-year-label">2022</h3>
+            <ol class="ship-items">
+              <li class="ship-item">
+                <div class="ship-body">
+                  <div class="ship-head">
+                    <h4><a href="https://www.mobilewest.com.br" rel="noopener">Mobile West</a></h4>
+                    <span class="ship-kind" data-pt="empresa">company</span>
+                  </div>
+                  <p data-pt="Fundei uma consultoria de engenharia mobile: release engineering, segurança e performance para empresas mobile-first.">Founded a mobile engineering consultancy: release engineering, security and performance for mobile-first companies.</p>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li class="ship-year">
+            <h3 class="ship-year-label">2021</h3>
+            <ol class="ship-items">
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2021-11-30" data-pt="nov">Nov</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/swift-pokemon-tdc" rel="noopener" data-pt="Palestra no TDC">TDC talk</a></h4>
+                    <span class="ship-kind" data-pt="palestra">talk</span>
+                  </div>
+                  <p data-pt="Projeto de exemplo apresentado no The Developer's Conference.">Sample project presented at The Developer's Conference.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2021-07-03" data-pt="jul">Jul</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/Swinject/Swinject" rel="noopener">Swinject</a></h4>
+                    <span class="ship-kind" data-pt="código aberto">open source</span>
+                  </div>
+                  <p data-pt="Primeiras contribuições no framework de DI do Swift. Hoje, um dos mantenedores.">First contributions to Swift's DI framework. Now one of its maintainers.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2021-06-26" data-pt="jun">Jun</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/megazord-pokemon-mobile" rel="noopener">megazord-pokemon-mobile</a></h4>
+                    <span class="ship-kind">9 ★</span>
+                  </div>
+                  <p data-pt="Um app em Jetpack Compose, SwiftUI e Flutter. O repositório com mais estrelas.">One app in Jetpack Compose, SwiftUI and Flutter. The most-starred repo.</p>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li class="ship-year">
+            <h3 class="ship-year-label">2020</h3>
+            <ol class="ship-items">
+              <li class="ship-item is-app">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2020-07-25" data-pt="25 jul">Jul 25</time>
+                  <div class="ship-head">
+                    <img class="ship-icon" src="assets/culto-domestico.png" width="26" height="26" alt="" loading="lazy">
+                    <h4><a href="https://play.google.com/store/apps/details?id=br.com.manobray.culto_domestico_app" rel="noopener">Culto Doméstico</a></h4>
+                    <span class="badge">Google Play</span>
+                  </div>
+                  <p data-pt="Registro dos cultos domésticos da família e da lista de oração.">A record of your family's home worship and prayer list.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2020-07-07" data-pt="jul">Jul</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/modularization-app-ios" rel="noopener">modularization-app-ios</a></h4>
+                  </div>
+                  <p data-pt="Um app iOS modularizado, com um módulo Flutter no mesmo binário.">A modular iOS app, with a Flutter module in the same binary.</p>
+                </div>
+              </li>
+              <li class="ship-item">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2020-04-07" data-pt="abr">Apr</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/recolocacoes-corona-virus" rel="noopener">recolocacoes-corona-virus</a></h4>
+                    <span class="ship-kind">6 ★</span>
+                  </div>
+                  <p data-pt="Ajuda para profissionais de TI demitidos na pandemia se recolocarem.">Helping IT professionals laid off in the pandemic find new jobs.</p>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li class="ship-year is-origin">
+            <h3 class="ship-year-label">2014</h3>
+            <ol class="ship-items">
+              <li class="ship-item is-first">
+                <div class="ship-body">
+                  <time class="ship-date mono" datetime="2014-06-18" data-pt="18 jun">Jun 18</time>
+                  <div class="ship-head">
+                    <h4><a href="https://github.com/1ucas/pirates-game" rel="noopener">pirates-game</a></h4>
+                    <span class="badge badge-first" data-pt="primeiro repositório">first repo</span>
+                  </div>
+                  <p data-pt="Onde tudo começou: um pequeno jogo de aventura para iOS, em Objective-C. Você começa com uma espada de madeira e meias como armadura.">
+                    Where it all started: a small iOS adventure game in Objective-C. You start
+                    with a wood sword and socks for armor.
+                  </p>
+                  <p class="ship-span">“Initial Commit”</p>
+                </div>
+                <img class="ship-shot" src="assets/pirates-game.webp" width="120" height="175"
+                  alt="pirates-game on iOS: Health 10, Damage 1, a Wood Sword and Socks for armor" loading="lazy">
+              </li>
+            </ol>
+          </li>
+
+        </ol>
 
         <p class="more-link">
           <a href="https://github.com/1ucas?tab=repositories" rel="noopener" data-pt="Todos os repositórios públicos →">
             All public repositories →
           </a>
         </p>
-      </div>
-    </section>
-
-    <!-- ───────────────────────── craft ───────────────────────── -->
-    <section class="section" id="craft" aria-labelledby="craft-h">
-      <div class="wrap">
-        <h2 class="section-title" id="craft-h" data-pt="Ferramentas do ofício">Tools of the trade</h2>
-
-        <div class="craft-grid">
-          <div class="craft-group">
-            <h3 data-pt="Mobile">Mobile</h3>
-            <ul class="chips">
-              <li>Swift</li><li>SwiftUI</li><li>UIKit</li><li>Kotlin</li>
-              <li>Jetpack Compose</li><li>Flutter</li><li>KMM</li><li>Objective-C</li>
-            </ul>
-          </div>
-          <div class="craft-group">
-            <h3 data-pt="Backend e Web">Backend &amp; web</h3>
-            <ul class="chips">
-              <li>Node.js</li><li>TypeScript</li><li>Python</li><li>C# / .NET</li>
-              <li>Java / Spring</li><li>Vapor</li>
-            </ul>
-          </div>
-          <div class="craft-group">
-            <h3 data-pt="Plataforma">Platform</h3>
-            <ul class="chips">
-              <li>CI/CD</li><li>Fastlane</li><li>Docker</li><li>GitHub Actions</li>
-              <li>Modularization</li><li>IaC</li>
-            </ul>
-          </div>
-          <div class="craft-group">
-            <h3 data-pt="IA">AI</h3>
-            <ul class="chips">
-              <li>Agent harnesses</li><li>Context engineering</li><li>Core ML</li><li>Whisper</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
 
