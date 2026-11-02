@@ -17,7 +17,8 @@ assets/
   styles.css                  design tokens + layout
   main.js                     theme switch, EN/PT-BR switch, contribution chart
   avatar.png                  portrait
-  indilo.png, takonto.png      app icons for the two main projects
+  indilo.png, takonto.png,    app icons for the three main apps
+    playlock.png
   icons/                      original project logos and favicons for the cards
   horizon.webp                sunset band behind the contact section
   og.png                      social share card (1200×630)
@@ -39,10 +40,12 @@ scripts/generate-brand-assets.cjs  optional artwork export tool
 instead of running it through Jekyll. Nothing here needs a build step, and files
 are served under the names they have in the repo.
 
-The featured section leads with my two main apps: **Indilo**, available on the
-[App Store](https://apps.apple.com/br/app/indilo/id6818150840), and **Takonto**,
-coming soon. Both cards link to their public websites and use app icons copied
-from their respective site assets. The next section features **Mini Ping**,
+The featured section leads with my three apps on the App Store:
+[**Indilo**](https://apps.apple.com/br/app/indilo/id6818150840),
+[**Takonto**](https://apps.apple.com/br/app/takonto/id6818135080) and
+[**Playlock**](https://apps.apple.com/br/app/playlock/id6825380433). Each card
+links to the App Store listing and the app's public website, and uses the app
+icon copied from that site's assets. The next section features **Mini Ping**,
 **Bolão da Mega**, and **Food Racer**, followed by open-source projects and
 experiments. Each section uses the same heading spacing and card layout.
 Card actions sit at the bottom so their links align across a row.
